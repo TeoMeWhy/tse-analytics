@@ -10,6 +10,11 @@ import matplotlib.pyplot as plt
 
 from adjustText import adjust_text
 
+import seaborn as sns
+
+
+# COMMAND ----------
+
 df = spark.table("silver_tse.sumario_partido").toPandas()
 
 # COMMAND ----------
@@ -59,6 +64,61 @@ adjust_text(texts, force_points=0.2, force_text=0.2,
 plt.legend(fontsize=7, loc=4)
 
 plt.savefig("/dbfs/mnt/datalake/raw/grupos_partidos_diversidade.jpeg", dpi=300, transparent=False)
+
+# COMMAND ----------
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = df.sort_values(by='AVG_BEM_CANDIDATO')
+
+plt.figure(figsize=(8,8))
+
+# Create data
+bars = data["SG_PARTIDO"]
+x_pos = np.arange(len(bars))
+
+plt.ticklabel_format(style='plain')
+sns.barplot(data["SG_PARTIDO"], data['AVG_BEM_CANDIDATO'])
+
+# Rotation of the bar names
+plt.xticks(x_pos, bars, rotation=90)
+plt.title("Distribuição média de valor dos bens por candidato/partido")
+plt.xlabel("Partido")
+plt.ylabel("Valor Médio de Bens")
+
+plt.grid(True)
+plt.tight_layout()
+
+
+plt.savefig("/dbfs/mnt/datalake/raw/grupos_partidos_media_bens.jpeg", dpi=125, transparent=False)
+
+# COMMAND ----------
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = df.sort_values(by='MEDIAN_BEM_CANDIDATO')
+
+plt.figure(figsize=(8,8))
+
+# Create data
+bars = data["SG_PARTIDO"]
+x_pos = np.arange(len(bars))
+
+plt.ticklabel_format(style='plain')
+sns.barplot(data["SG_PARTIDO"], data['MEDIAN_BEM_CANDIDATO'])
+
+# Rotation of the bar names
+plt.xticks(x_pos, bars, rotation=90)
+plt.title("Distribuição mediana de valor dos bens por candidato/partido")
+plt.xlabel("Partido")
+plt.ylabel("Valor Mediano de Bens")
+
+plt.grid(True)
+plt.tight_layout()
+
+plt.savefig("/dbfs/mnt/datalake/raw/grupos_partidos_mediana_bens.jpeg", dpi=125, transparent=False)
 
 # COMMAND ----------
 
