@@ -58,6 +58,8 @@ De maneira trivial, podemos gerar um (ou dois) gráficos bem simples para entend
 
 <img src="https://i.ibb.co/xzmMpxR/grupos-partidos-mediana-bens.jpg" alt="grupos-partidos-mediana-bens" width="750">
 
+Interessante como a ordem dos aprtidos no gráfico se altera quando utilizamos uma medida menos sensível à outliers.
+
 ## 2.2. Clusters em Diversidade
 
 A partir da tabela criada anteriormente, dá-se início às análises. Com isso, a primeira ideia seria realizar agrupameneto entre os 33 partidos encontrados, buscando classificar partidos similares entre si em um mesmo grupo.
