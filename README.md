@@ -52,9 +52,11 @@ Todos estes dados foram criados e persistidos na tabela `silver_tse.sumario_part
 
 ## 2.1. Bens declarados
 
-De maneira trivial, podemos gerar um (ou dois) gráficos bem simples para entender o comportamento dos partidos em relação à declaração de bens. isto é, calcular a **média** (AVG_BEM_CANDIDATO) e **mediana** (MEDIAN_BEM_CANDIDATO) por partido, contempladas pelas variáveis 
+De maneira trivial, podemos gerar um (ou dois) gráficos bem simples para entender o comportamento dos partidos em relação à declaração de bens. isto é, calcular a **média** (AVG_BEM_CANDIDATO) e **mediana** (MEDIAN_BEM_CANDIDATO) por partido. Para média:
 
 <img src="https://i.ibb.co/r7hwkCB/grupos-partidos-media-bens.jpg" alt="grupos-partidos-media-bens" width="750">
+
+Agora para a mediana (menos sensível à dados afastados da média):
 
 <img src="https://i.ibb.co/xzmMpxR/grupos-partidos-mediana-bens.jpg" alt="grupos-partidos-mediana-bens" width="750">
 
