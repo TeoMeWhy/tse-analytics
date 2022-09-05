@@ -54,13 +54,11 @@ Todos estes dados foram criados e persistidos na tabela `silver_tse.sumario_part
 
 De maneira trivial, podemos gerar um (ou dois) gráficos bem simples para entender o comportamento dos partidos em relação à declaração de bens. isto é, calcular a **média** (AVG_BEM_CANDIDATO) e **mediana** (MEDIAN_BEM_CANDIDATO) por partido. Para média:
 
-<img src="https://i.ibb.co/r7hwkCB/grupos-partidos-media-bens.jpg" alt="grupos-partidos-media-bens">
 
-Agora para a mediana (menos sensível à dados afastados da média):
 
 <img src="https://i.ibb.co/xzmMpxR/grupos-partidos-mediana-bens.jpg" alt="grupos-partidos-mediana-bens">
 
-Interessante como a ordem dos aprtidos no gráfico se altera quando utilizamos uma medida menos sensível à outliers.
+Interessante como a ordem dos partidos no gráfico se altera quando utilizamos uma medida menos sensível à outliers.
 
 ## 2.2. Clusters em Diversidade
 
