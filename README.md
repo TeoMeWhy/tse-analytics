@@ -58,7 +58,7 @@ De maneira trivial, podemos gerar um (ou dois) gráficos bem simples para entend
 
 Agora para a mediana (menos sensível à dados afastados da média):
 
-<img src="https://i.ibb.co/xzmMpxR/grupos-partidos-mediana-bens.jpg" alt="grupos-partidos-mediana-bens" width="750">
+<!-- <img src="https://i.ibb.co/xzmMpxR/grupos-partidos-mediana-bens.jpg" alt="grupos-partidos-mediana-bens" width="750"> -->
 
 Interessante como a ordem dos partidos no gráfico se altera quando utilizamos uma medida menos sensível à outliers.
 
