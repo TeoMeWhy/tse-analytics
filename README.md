@@ -1,6 +1,6 @@
 # Análise dos partidos e candidatos para Eleições de 2022
 
-Dados coletados a partir do site do TSE: [https://divulgacandcontas.tse.jus.br/divulga/#/](https://divulgacandcontas.tse.jus.br/divulga/#/), armazenados e analisados durante as lives no canal [Téo Me Why](https://www.twitch.tv/teomewhy).
+Dados coletados a partir do site do TSE: [dadosabertos.tse.jus.br/dataset/candidatos-2022](https://dadosabertos.tse.jus.br/dataset/candidatos-2022), armazenados e analisados durante as lives no canal [Téo Me Why](https://www.twitch.tv/teomewhy).
 
 Segue os VODs para acompanhar o desenvolvimento:
 
