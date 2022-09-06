@@ -2,6 +2,12 @@
 
 Dados coletados a partir do site do TSE: [https://divulgacandcontas.tse.jus.br/divulga/#/](https://divulgacandcontas.tse.jus.br/divulga/#/), armazenados e analisados durante as lives no canal [Téo Me Why](https://www.twitch.tv/teomewhy).
 
+Segue os VODs para acompanhar o desenvolvimento:
+
+| Dia | Descrição| Link |
+|---|---|---|
+|2022-09-05| Análise de Bens e Clusters de Diversidade dos partidos |[:link:](https://www.twitch.tv/videos/1583439007) |
+
 ## Índice
 
 - [1. ETL](#1-etl)
