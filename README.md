@@ -7,6 +7,7 @@ Segue os VODs para acompanhar o desenvolvimento:
 | Dia | Descrição| Link |
 |---|---|---|
 |2022-09-05| Análise de Bens e Clusters de Diversidade dos partidos |[:link:](https://www.twitch.tv/videos/1583439007) |
+|2022-09-07| Correções nas médias de taxas para a taxa geral. Mudança de representação gráfica. Novas bases adicionadas |[:link:]([https://www.twitch.tv/videos/1583439007](https://www.twitch.tv/videos/1584667854)) |
 
 ## Índice
 
