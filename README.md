@@ -72,8 +72,7 @@ A partir da tabela criada anteriormente, dá-se início às análises. Com isso,
 
 Utilizando as variáveis `PCT_FEMININO` e `PCT_PRETA`, aplicou-se o método de KMeans considerando 6 grupos. O resultado desta análise se dá pelo gráfico abaixo:
 
-<img src="https://i.ibb.co/MChwGLr/grupos-partidos-diversidade.jpg" alt="grupos-partidos-diversidade" width="750">
-
+<img src="https://i.ibb.co/3S5ML0T/grupos-partidos-diversidade.jpg" alt="grupos-partidos-diversidade" width="750">
 
 O que se pode interpretar deste agrupamento? Vamos tentar responder abaixo.
 

@@ -7,15 +7,28 @@ from sklearn import cluster
 from bokeh.plotting import figure, output_file, save
 from bokeh.io import show
 import matplotlib.pyplot as plt
+import numpy as np
 
 from adjustText import adjust_text
 
 import seaborn as sns
 
-
 # COMMAND ----------
 
 df = spark.table("silver_tse.sumario_partido").toPandas()
+df_geral = spark.table("bronze_tse.consulta_cand_2022_brasil")
+
+# COMMAND ----------
+
+df_count_genero = df_geral.groupBy("DS_GENERO").count().toPandas()
+df_count_genero["proporcao"] = df_count_genero["count"] / df_count_genero["count"].sum()
+taxa_mulheres = df_count_genero['proporcao'][df_count_genero['DS_GENERO']=='FEMININO'].values[0]
+print("Taxa geral Mulheres:", taxa_mulheres)
+
+df_count_cor_raca = df_geral.groupBy("DS_COR_RACA").count().toPandas()
+df_count_cor_raca["proporcao"] = df_count_cor_raca["count"] / df_count_cor_raca["count"].sum()
+taxa_preta = df_count_cor_raca['proporcao'][df_count_cor_raca['DS_COR_RACA']=='PRETA'].values[0]
+print("Taxa Geral Preta:",taxa_preta)
 
 # COMMAND ----------
 
@@ -54,8 +67,8 @@ plt.xlabel("Taxa de Mulheres")
 plt.ylabel("Taxa de Raça Preta")
 plt.ylim(0,0.42)
 
-plt.vlines( df['PCT_FEMININO'].mean(), 0, 0.42, label='Taxa média de Mulheres', linestyles='--', color = 'tomato')
-plt.hlines( df['PCT_PRETA'].mean(), 0.22, 0.65, label='Taxa média de Raça Preta', linestyles='--', color= 'royalblue' )
+plt.vlines( taxa_mulheres, 0, 0.42, label='Taxa Mulheres Geral', linestyles='--', color = 'tomato')
+plt.hlines( taxa_preta, 0.22, 0.65, label='Taxa Raça Preta Geral', linestyles='--', color= 'royalblue' )
 
 adjust_text(texts, force_points=0.2, force_text=0.2,
             expand_points=(1, 1), expand_text=(1, 1),
@@ -94,9 +107,6 @@ plt.tight_layout()
 plt.savefig("/dbfs/mnt/datalake/raw/grupos_partidos_media_bens.jpeg", dpi=125, transparent=False)
 
 # COMMAND ----------
-
-import numpy as np
-import matplotlib.pyplot as plt
 
 data = df.sort_values(by='MEDIAN_BEM_CANDIDATO')
 
