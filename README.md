@@ -88,8 +88,8 @@ O que se pode interpretar deste agrupamento? Vamos tentar responder abaixo.
 |---|---|
 | Novo, PL, PCA (Sem partido) | Grupo que possui menor diversidade, tanto em gênero quanto em raça e cor.|
 | PSD, PTB, UNIÃO, PSDB, PODE, Republicanos, PV, PRTB, Patriota, PP, PSC, Solidariedade, Avante, MDB, Cidadania, AGIR, PMN | Grupo que contém maior número de partidos. Possui proporções de mulheres abaixo da média mas cresce a proporção de raça preta em relação ao grupo vermelho.|
-|DC, PSB, PROS, Rede, PMB, PDT, PCO| Grupo concentrado um pouco acima da média de proporção de raça preta, mas ainda abaixo da proporção média de mulheres |
-|PC do B, PCB, PT|Grupo com valores de diversidade mais altos do que a média, se distanciando dos grupos Vermelhor, Laranja e Azul. Vale destacar que PC do B está relativamente distante dos outros dois partidos de seu grupo, uma vez que possui uma proporção de mulheres mais elevada.|
-|PSOL, PSTU|Um dos menores grupos, com apenas 2 partidos, estes que apresentam a maior proporção de raça preta, com uma média de proporção de mulheres similar ao grupo lilás.|
+|DC, PSB, PROS, Rede, PMB, PDT, PCO| Grupo concentrado um pouco acima da proporção de raça preta geral, mas ainda abaixo da proporção de mulheres geral |
+|PC do B, PCB, PT|Grupo com valores de diversidade mais altos do que a base geral, se distanciando dos grupos de posições inferiores do gráfico. Vale destacar que PC do B está relativamente distante dos outros dois partidos de seu grupo, uma vez que possui uma proporção de mulheres mais elevada.|
+|PSOL, PSTU|Um dos menores grupos, com apenas 2 partidos, estes que apresentam a maior proporção de raça preta..|
 |UP|Grupo com apenas um partido, pois este se destaca nitidamente por altas proporções de mulheres e raça preta, sendo o único que possui mais mulheres que homens em seu partido.|
 
