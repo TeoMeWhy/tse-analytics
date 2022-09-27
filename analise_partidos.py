@@ -13,6 +13,8 @@ from adjustText import adjust_text
 
 import seaborn as sns
 
+import os
+
 # COMMAND ----------
 
 df = spark.table("silver_tse.sumario_partido").toPandas()
@@ -35,7 +37,7 @@ print("Taxa Geral Preta:",taxa_preta)
 # DBTITLE 1,Clusters Partidos
 features = ['PCT_FEMININO','PCT_PRETA']
 
-model = cluster.KMeans(n_clusters=6)
+model = cluster.KMeans(n_clusters=6, random_state=1992)
 
 model.fit(df[features])
 df['cluster'] = model.labels_
@@ -48,21 +50,27 @@ df_cluster
 
 # COMMAND ----------
 
-for c in df['cluster'].unique():
-    data = df[df['cluster']==c]
-    partidos = data['SG_PARTIDO']
-    tx_fem = data['PCT_FEMININO']
-    tx_preta = data['PCT_PRETA']
-    plt.plot(tx_fem, tx_preta, 'o')
+colors = (df['cluster'] + 1).tolist()
+
+plt.figure(dpi=300)
+
+plt.scatter(df['PCT_FEMININO'],
+            df['PCT_PRETA'],
+            c=colors,
+            alpha=0.8)
 
 texts = []
-for x, y, s in zip(df['PCT_FEMININO'].tolist(),
-                   df['PCT_PRETA'].tolist(),
-                   df["SG_PARTIDO"].tolist()):
+
+lines = zip(df['PCT_FEMININO'].tolist(),
+           df['PCT_PRETA'].tolist(),
+           df["SG_PARTIDO"].tolist())
+
+for x, y, s in lines:
     texts.append(plt.text(x, y, s, fontsize=8))
     
 plt.grid(True)
-plt.title("Grupos de Partidos")
+plt.suptitle("Grupos de Partidos - Candidatos 2022")
+plt.title("Cores iguais representam partidos de mesmo grupo", fontsize=7)
 plt.xlabel("Taxa de Mulheres")
 plt.ylabel("Taxa de Raça Preta")
 plt.ylim(0,0.42)
@@ -76,12 +84,93 @@ adjust_text(texts, force_points=0.2, force_text=0.2,
 
 plt.legend(fontsize=7, loc=4)
 
-plt.savefig("/dbfs/mnt/datalake/raw/grupos_partidos_diversidade.jpeg", dpi=300, transparent=False)
+plt.text(0.2, -0.1, "Fonte: https://dadosabertos.tse.jus.br/dataset/candidatos-2022", fontsize=6)
+
+plt.savefig("/dbfs/mnt/datalake/tmp/grupos_partidos_diversidade.jpeg", dpi=300, transparent=False)
 
 # COMMAND ----------
 
-import numpy as np
-import matplotlib.pyplot as plt
+colors = (df['cluster'] + 1).tolist()
+
+plt.figure(dpi=300)
+
+plt.scatter(df['PCT_FEMININO'],
+            df['PCT_PRETA'],
+            s=1.5*100*(df['qtCandidatos'] / df['qtCandidatos'].max()),
+            c=colors,
+            alpha=0.4)
+
+texts = []
+
+lines = zip(df['PCT_FEMININO'].tolist(),
+           df['PCT_PRETA'].tolist(),
+           df["SG_PARTIDO"].tolist())
+
+for x, y, s in lines:
+    texts.append(plt.text(x, y, s, fontsize=8))
+    
+plt.grid(True)
+plt.suptitle("Grupos de Partidos - Candidatos 2022")
+plt.title("Quanto maior a bolha, mais candidatos", fontsize=7)
+plt.xlabel("Taxa de Mulheres")
+plt.ylabel("Taxa de Raça Preta")
+plt.ylim(0,0.42)
+
+plt.vlines( taxa_mulheres, 0, 0.42, label='Taxa Mulheres Geral', linestyles='--', color = 'tomato')
+plt.hlines( taxa_preta, 0.22, 0.65, label='Taxa Raça Preta Geral', linestyles='--', color= 'royalblue' )
+
+adjust_text(texts, force_points=0.2, force_text=0.2,
+            expand_points=(1, 1), expand_text=(1, 1),
+            arrowprops=dict(arrowstyle="-", color='black', lw=0.5))
+
+plt.legend(fontsize=7, loc=4)
+
+plt.text(0.2, -0.1, "Fonte: https://dadosabertos.tse.jus.br/dataset/candidatos-2022", fontsize=6)
+
+plt.savefig("/dbfs/mnt/datalake/tmp/grupos_partidos_diversidade_tamanho.jpeg", dpi=300, transparent=False)
+
+# COMMAND ----------
+
+colors = (df['cluster'] + 1).tolist()
+
+plt.figure(dpi=300)
+
+plt.scatter(df['PCT_FEMININO'],
+            df['PCT_PRETA'],
+            s=1.7*100*df['MEDIAN_BEM_CANDIDATO'] / df['MEDIAN_BEM_CANDIDATO'].max(),
+            c=colors,
+            alpha=0.4)
+
+texts = []
+
+lines = zip(df['PCT_FEMININO'].tolist(),
+           df['PCT_PRETA'].tolist(),
+           df["SG_PARTIDO"].tolist())
+
+for x, y, s in lines:
+    texts.append(plt.text(x, y, s, fontsize=8))
+    
+plt.grid(True)
+plt.suptitle("Grupos de Partidos - Candidatos 2022")
+plt.title("Quanto maior a bolha, maior a mediana de valor de bens", fontsize=7)
+plt.xlabel("Taxa de Mulheres")
+plt.ylabel("Taxa de Raça Preta")
+plt.ylim(0,0.42)
+
+plt.vlines( taxa_mulheres, 0, 0.42, label='Taxa Mulheres Geral', linestyles='--', color = 'tomato')
+plt.hlines( taxa_preta, 0.22, 0.65, label='Taxa Raça Preta Geral', linestyles='--', color= 'royalblue' )
+
+adjust_text(texts, force_points=0.2, force_text=0.2,
+            expand_points=(1, 1), expand_text=(1, 1),
+            arrowprops=dict(arrowstyle="-", color='black', lw=0.5))
+
+plt.legend(fontsize=7, loc=4)
+
+plt.text(0.2, -0.1, "Fonte: https://dadosabertos.tse.jus.br/dataset/candidatos-2022", fontsize=6)
+
+plt.savefig("/dbfs/mnt/datalake/tmp/grupos_partidos_diversidade_bens.jpeg", dpi=300, transparent=False)
+
+# COMMAND ----------
 
 data = df.sort_values(by='AVG_BEM_CANDIDATO')
 
@@ -104,7 +193,7 @@ plt.grid(True)
 plt.tight_layout()
 
 
-plt.savefig("/dbfs/mnt/datalake/raw/grupos_partidos_media_bens.jpeg", dpi=125, transparent=False)
+plt.savefig("/dbfs/mnt/datalake/tmp/grupos_partidos_media_bens.jpeg", dpi=125, transparent=False)
 
 # COMMAND ----------
 
@@ -128,8 +217,28 @@ plt.ylabel("Valor Mediano de Bens")
 plt.grid(True)
 plt.tight_layout()
 
-plt.savefig("/dbfs/mnt/datalake/raw/grupos_partidos_mediana_bens.jpeg", dpi=125, transparent=False)
+plt.savefig("/dbfs/mnt/datalake/tmp/grupos_partidos_mediana_bens.jpeg", dpi=125, transparent=False)
 
 # COMMAND ----------
 
+df[df['cluster']==5]['SG_PARTIDO'].unique()
 
+# COMMAND ----------
+
+# Grupo 0
+# PROS, CIDADANIA, DC, PMB, PSB, PMN, SOLIDARIEDADE, MDB, PDT, PSC, REDE, AGIR, PATRIOTA, AVANTE
+
+# Grupo 1
+# PSOL, PSTU
+
+# Grupo 2
+# UP
+
+# Grupo 3
+# PCO, PCB, PT
+
+# Grupo 4
+# REPUBLICANOS, PSDB, UNIÃO, PL, PRTB, PV, PTB, PSD, NOVO, PP, PODE
+
+# Grupo 5
+# PC do B
