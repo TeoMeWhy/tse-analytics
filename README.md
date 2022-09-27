@@ -59,11 +59,11 @@ Todos estes dados foram criados e persistidos na tabela `silver_tse.sumario_part
 
 De maneira trivial, podemos gerar um (ou dois) gráficos bem simples para entender o comportamento dos partidos em relação à declaração de bens. isto é, calcular a **média** (AVG_BEM_CANDIDATO) e **mediana** (MEDIAN_BEM_CANDIDATO) por partido. Para média:
 
-<img src="https://i.ibb.co/r7hwkCB/grupos-partidos-media-bens.jpg" alt="grupos-partidos-media-bens" width="750">
+<img src="https://i.ibb.co/sFK2cWH/grupos-partidos-media-bens.jpg" alt="grupos-partidos-media-bens" width="750">
 
 Agora para a mediana (menos sensível à dados afastados da média):
 
-<img src="https://i.ibb.co/PNc5bSJ/grupos-partidos-mediana-bens.jpg" alt="grupos-partidos-mediana-bens" width="750">
+<img src="https://i.ibb.co/w06Rkpf/grupos-partidos-mediana-bens.jpg" alt="grupos-partidos-mediana-bens" width="750">
 
 Interessante como a ordem dos partidos no gráfico se altera quando utilizamos uma medida menos sensível à outliers.
 
@@ -73,15 +73,15 @@ A partir da tabela criada anteriormente, dá-se início às análises. Com isso,
 
 Utilizando as variáveis `PCT_FEMININO` e `PCT_PRETA`, aplicou-se o método de KMeans considerando 6 grupos. O resultado desta análise se dá pelo gráfico abaixo:
 
-<img src="https://i.ibb.co/8dtNQ9n/grupos-partidos-diversidade.jpg" alt="grupos-partidos-diversidade" width="750">
+<img src="https://i.ibb.co/nfYjwWQ/grupos-partidos-diversidade.jpg" alt="grupos-partidos-diversidade" width="750">
 
 Adicionamos também uma visão que considera o tamanho do partido, i.e., a quantidade de candidatos que este partido tem para essas eleições. O tamanho de cada bolha, diz a respeito da quantidade de candidatos presentes no partido:
 
-<img src="https://i.ibb.co/8dN0JtW/grupos-partidos-diversidade-tamanho.jpg" alt="grupos-partidos-diversidade-tamanho" width="750">
+<img src="https://i.ibb.co/mbb7kph/grupos-partidos-diversidade-tamanho.jpg" alt="grupos-partidos-diversidade-tamanho" width="750">
 
 Por fim, a mesma de forma análoga à quantidade de candidatos, realizamos para o valor mediano de bens em cada partido, onde este número reflete no tamanho de sua bolha.
 
-<img src="https://i.ibb.co/WytRYMk/grupos-partidos-diversidade-bens.jpg" alt="grupos-partidos-diversidade-bens" width="750">
+<img src="https://i.ibb.co/MS2X8F0/grupos-partidos-diversidade-bens.jpg" alt="grupos-partidos-diversidade-bens" width="750">
 
 O que se pode interpretar deste agrupamento? Vamos tentar responder abaixo.
 
