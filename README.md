@@ -87,10 +87,10 @@ O que se pode interpretar deste agrupamento? Vamos tentar responder abaixo.
 
 | Partidos | Resumo |
 |---|---|
-| Novo, PL, PCA (Sem partido) | Grupo que possui menor diversidade, tanto em gênero quanto em raça e cor.|
-| PSD, PTB, UNIÃO, PSDB, PODE, Republicanos, PV, PRTB, Patriota, PP, PSC, Solidariedade, Avante, MDB, Cidadania, AGIR, PMN | Grupo que contém maior número de partidos. Possui proporções de mulheres abaixo da média mas cresce a proporção de raça preta.|
-|DC, PSB, PROS, Rede, PMB, PDT, PCO| Grupo concentrado um pouco acima da proporção de raça preta geral, mas ainda abaixo da proporção de mulheres geral |
-|PC do B, PCB, PT|Grupo com valores de diversidade mais altos do que a base geral, se distanciando dos grupos de posições inferiores do gráfico. Vale destacar que PC do B está relativamente distante dos outros dois partidos de seu grupo, uma vez que possui uma proporção de mulheres mais elevada.|
+| REPUBLICANOS, PSDB, UNIÃO, PL, PRTB, PV, PTB, PSD, NOVO, PP, PODE  | Grupo que possui menor diversidade, tanto em gênero quanto em raça e cor.|
+| PROS, CIDADANIA, DC, PMB, PSB, PMN, SOLIDARIEDADE, MDB, PDT, PSC, REDE, AGIR, PATRIOTA, AVANTE | Grupo que contém maior número de partidos. Possui proporções de mulheres na média, bem como tambem na média da proporção de raça preta.|
+|PCO, PCB, PT| Grupo concentrado um pouco acima da proporção de raça preta geral, mas na média da proporção de mulheres geral |
+|PC do B|Grupo com um único partido, possui uma proporção de mulheres mais elevada, bem como de raça preta, se destacando dos demais|
 |PSOL, PSTU|Um dos menores grupos, com apenas 2 partidos, estes que apresentam a maior proporção de raça preta..|
 |UP|Grupo com apenas um partido, pois este se destaca nitidamente por altas proporções de mulheres e raça preta, sendo o único que possui mais mulheres que homens em seu partido.|
 
